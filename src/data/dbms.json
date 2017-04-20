@@ -90,6 +90,7 @@
 			"delivered": true
 		}]
 	},
+	
 	"availableStores": [{
 		"id": "store1",
 		"lat": 12.97434,
