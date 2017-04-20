@@ -4,7 +4,7 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class DataService {
-
+  public location:Object;
   constructor(private http : Http) { }
 
   fetchData () {
@@ -12,5 +12,14 @@ export class DataService {
   			return res.json();
   		})
   }
+
+  setLocation (obj) {
+  	this.location = obj;
+  }
+
+  getLocation () {
+  	return this.location;
+  }
+
 
 }

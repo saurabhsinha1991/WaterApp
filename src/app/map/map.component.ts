@@ -27,6 +27,8 @@ export class MapComponent implements OnInit {
   	this.dataService.fetchData().subscribe( (data) => {
   		this.markers = data;
   	});
+
+    let Location = this.dataService.getLocation();
   }
 
 }
