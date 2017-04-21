@@ -20,15 +20,16 @@ export class MapComponent implements OnInit {
 
   markers = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+
+  }
 
 
   ngOnInit() {
-  	this.dataService.fetchData().subscribe( (data) => {
-  		this.markers = data;
-  	});
-
-    let Location = this.dataService.getLocation();
+  	// this.dataService.getLocation().then( (res) => {
+   //    debugger;
+   //  })
+   let loc = this.dataService.getLocation();
   }
 
 }

@@ -3,6 +3,8 @@ import { MapsAPILoader } from 'angular2-google-maps/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DataService } from '../data.service';
 
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -16,7 +18,11 @@ export class SearchComponent implements OnInit {
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
-  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone, private dataService: DataService) { }
+  constructor(
+      private mapsAPILoader: MapsAPILoader, 
+      private ngZone: NgZone, 
+      private dataService: DataService,
+      private router: Router) { }
 
   ngOnInit() {
     //create search FormControl
@@ -39,6 +45,7 @@ export class SearchComponent implements OnInit {
 
           this.dataService.setLocation(place.geometry.location);
           
+          this.router.navigate(['/search-result']);
         });
       });
     });

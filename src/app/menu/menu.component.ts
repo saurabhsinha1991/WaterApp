@@ -14,9 +14,7 @@ export class MenuComponent implements OnInit {
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
-  	this.dataService.fetchData().subscribe((data) => {
-  		this.menuItems = data;
-  	})
+  	
   }
 
 }
