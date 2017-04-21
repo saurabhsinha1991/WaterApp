@@ -1,23 +1,23 @@
 [
 	  {
-		  "lat": 51.673858,
-		  "lng": 7.815982,
+		  "lat": 14.9244587,
+		  "lng": 81.6758628,
 		  "label": "A",
 		  "draggable": false,
 		  "title": "ABC Water Supply",
 		  "availableItems": ["Tanker Water"]
 	  },
 	  {
-		  "lat": 51.373858,
-		  "lng": 7.215982,
+		  "lat": 17.9244587,
+		  "lng": 79.6758628,
 		  "label": "B",
 		  "draggable": false,
 		  "title": "PQR Water Supply",
 		  "availableItems": ["Tanker Water", "Can Water"]
 	  },
 	  {
-		  "lat": 51.723858,
-		  "lng": 7.895982,
+		  "lat": 7.9244587,
+		  "lng": 72.6758628,
 		  "label": "C",
 		  "draggable": false,
 		  "title": "XYZ Water Supply",
