@@ -1,27 +1,41 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs/observable';
-import 'rxjs/Rx';
-import { Items } from './app.interfaces';
-import { Subject } from 'rxjs/Subject';
+// import { Observable } from 'rxjs/observable';
+// import 'rxjs/Rx';
 
 @Injectable()
 export class DataService {
-  public location: Object;
-
+  location: any;
+  Items: Array<Object>;
 
   constructor(private http : Http) {
 
   }
 
-  setLocation(obj) {
-    this.location = obj;
+  fetchData() {
+    return this.http.get('./data/data.json').map( (res) => {
+        return res.json();
+    })
   }
 
-  getLocation() {
-    return new Promise((resolve, reject) => {
-      resolve(this.location);
-    });
+  setLocation(obj) {
+    this.location = obj;
+    this.fetchData().subscribe( (res) => {
+      let lat = this.location.lat() + 5,
+          lng = this.location.lng() + 5;
+        for(var key in res) {
+          if(res[key].lat < lat && res[key].lng < lng) {
+            this.Items.push(res[key]);
+          }
+        }
+        return this.Items;
+    })
+  }
+
+  getItems() {
+    return new Promise( (resolve, reject) => {
+      resolve(this.Items);
+    })
   }
 
 }

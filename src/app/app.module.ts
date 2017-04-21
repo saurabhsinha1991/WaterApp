@@ -17,6 +17,10 @@ import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 
+import { DataService } from './data.service';
+import { MapSearchComponent } from './map-search/map-search.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,8 @@ import { SearchResultComponent } from './search-result/search-result.component';
     MenuComponent,
     SearchComponent,
     HomeComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    MapSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
       libraries: ["places"]
     })
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
