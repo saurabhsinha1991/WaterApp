@@ -6,7 +6,7 @@ import {
     RouterStateSnapshot
 } from '@angular/router';
 import * as firebase from 'firebase';
-
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 @Injectable()
 export class UserService implements CanActivate {
@@ -61,6 +61,8 @@ export class UserService implements CanActivate {
                 alert(`${error.message} Unable to login. Try again!`);
         });
     }
+
+    
 
     logout(){
         this.userLoggedIn = false;

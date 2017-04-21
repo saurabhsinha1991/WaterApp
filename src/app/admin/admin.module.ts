@@ -31,7 +31,8 @@ const AdminRoutes: Routes = [
     ],
     exports: [
         RouterModule,
-        TruncatePipe
+        TruncatePipe,
+        
     ],
     declarations: [
         AdminComponent,
