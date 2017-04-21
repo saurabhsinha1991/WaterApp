@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 import { DataService } from '../data.service';
-
+import { Http } from '@angular/http';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css'],
-  providers: [DataService]
+  styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
   
@@ -18,7 +18,7 @@ export class MapComponent implements OnInit {
   lat: number = 51.673858;
   lng: number = 7.815982;
 
-  markers = [];
+  markers: any = [];
 
   constructor(private dataService: DataService) {
 
@@ -29,7 +29,9 @@ export class MapComponent implements OnInit {
   	// this.dataService.getLocation().then( (res) => {
    //    debugger;
    //  })
-   let loc = this.dataService.getLocation();
+   this.dataService.getItems().then( (res) => {
+     this.markers = res;
+   });
   }
 
 }
